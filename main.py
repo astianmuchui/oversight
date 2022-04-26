@@ -3,7 +3,7 @@ import webbrowser
 import wikipedia
 import pyjokes
 import datetime
-
+import random
 print("[Welcome to oversight ............]")
 
     
@@ -13,7 +13,7 @@ yt_auth_cmd = "-ovr .yt-pl"
              
 wk_sr_cmd = "-ovr .wk-sr"
 
-jk_gt_cmd = "-ovr .jk-get"
+jk_gt_cmd = "-ovr .jk-gt"
 
 dt_gt_cmd = "-ovr .dt"
 
@@ -40,7 +40,9 @@ while True:
             print(wikipedia.summary(sr_q,3))
             continue
          if jk_gt_cmd == command:
-            print(pyjokes.getjokes())
+            jokes = pyjokes.get_jokes()
+            
+            print(random.choice(jokes))
             continue
       except:
          print("Command not found")
